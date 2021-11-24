@@ -1,14 +1,17 @@
+* {
+  font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+}
+
 #grid {
-  height: 600px;
-  width: 600px;
+  height: 700px;
+  width: 700px;
   border: 2px;
   padding: 20px;
-  background-color: grey;
+  background-color: black;
   display: flex;
 }
 
 .column {
-  background-color: black;
   flex-grow: 1;
   display: flex;
   flex-direction:column;
@@ -16,4 +19,32 @@
 
 .box {
   flex-grow: 1;
+  background-color: white;
+}
+
+#settings {
+  display: flex;
+  flex-direction: column;
+  justify-content : space-evenly;
+  height: 600px;
+}
+
+#content {
+  display: flex;
+  justify-content : space-evenly;
+  align-items: center
+}
+
+button {
+  width: 200px;
+  height: 100px;
+  border-radius: 25px;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+h1 {
+  text-align: center;
+  font-size: 50px;
+  margin-bottom: 120px;
 }
