@@ -1,34 +1,53 @@
+function createGrid(cr) {
 
-// Define grid
-const grid = document.querySelector('#grid');
+  // Define grid
+  const grid = document.createElement('div');
+  grid.setAttribute('id', "grid")
 
-let cr = 16; // number of columns and rows
+  content.appendChild(grid)
 
-// Create columns
-const column = document.createElement('div')
-column.classList.add('column');
-column.setAttribute('id', 'c1')
+  // Create columns
+  const column = document.createElement('div')
+  column.classList.add('column');
+  column.setAttribute('id', 'c1')
 
-// Append number of colums to grid
-for(c= 2; c<= cr + 1 ; c++) {
-  grid.appendChild(column.cloneNode())
-  column.setAttribute('id', 'c' + c)
-}
-
-for(c= 1; c<= cr; c++) {
-  const columns = document.getElementById('c'+ c)
-  const box = document.createElement('div')
-
-  // Create box elements
-  box.classList.add('box')
-  box.setAttribute('id', 'c' + c + 'r' + 1)
-
-  // Add box elements to columns
-  for(r = 2; r <= cr + 1 ; r++) {
-    columns.appendChild(box.cloneNode())
-    box.setAttribute('id', 'c' + c + 'r' + r)
+  // Append number of colums to grid
+  for(c= 2; c<= cr + 1 ; c++) {
+    grid.appendChild(column.cloneNode())
+    column.setAttribute('id', 'c' + c)
   }
+
+  for(c= 1; c<= cr; c++) {
+    const columns = document.getElementById('c'+ c)
+    const box = document.createElement('div')
+
+    // Create box elements
+    box.classList.add('box')
+    box.setAttribute('id', 'c' + c + 'r' + 1)
+
+    // Add box elements to columns
+    for(r = 2; r <= cr + 1 ; r++) {
+      columns.appendChild(box.cloneNode())
+      box.setAttribute('id', 'c' + c + 'r' + r)
+    }
+  }
+
+  
+
 }
+
+function removeExistingGrid() {
+  // Define grid
+  const grid = document.querySelector('#grid');
+
+  const content = document.getElementById('content')
+
+  content.removeChild(grid);
+}
+
+const defaultCr = 16;
+
+createGrid(defaultCr)
 
 // Define box elements
 const boxes = document.querySelectorAll('.box');
@@ -93,6 +112,11 @@ slider.oninput = function() {
     box.style['background-color'] = 'white'
   })
 
-  
+  const newCr = this.value;
+
+  removeExistingGrid()
+
+  createGrid(newCr);
+
   output.innerHTML = this.value;
 } 
