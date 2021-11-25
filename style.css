@@ -3,8 +3,8 @@
 }
 
 #grid {
-  height: 700px;
-  width: 700px;
+  height: 400px;
+  width: 400px;
   border: 2px;
   padding: 20px;
   background-color: black;
@@ -47,4 +47,20 @@ h1 {
   text-align: center;
   font-size: 50px;
   margin-bottom: 120px;
+}
+
+#sliderContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100px;
+  justify-content: space-evenly;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+#myRange {
+  width: 200px;
+  height: 40px;
 }

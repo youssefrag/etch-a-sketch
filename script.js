@@ -1,3 +1,4 @@
+
 // Define grid
 const grid = document.querySelector('#grid');
 
@@ -31,14 +32,6 @@ for(c= 1; c<= cr; c++) {
 
 // Define box elements
 const boxes = document.querySelectorAll('.box');
-
-/*
-boxes.forEach((box) => {
-  box.addEventListener('mouseenter', () => {
-    box.style['background-color'] = 'red'
-  })
-})
-*/
 
 
 // Default button functionality
@@ -88,3 +81,18 @@ clearBtn.addEventListener('click', () => {
     box.style['background-color'] = 'white'
   })
 })
+
+let slider = document.getElementById("myRange")
+
+let output = document.getElementById("value")
+
+output.innerHTML = slider.value;
+
+slider.oninput = function() {
+  boxes.forEach((box) => {
+    box.style['background-color'] = 'white'
+  })
+
+  
+  output.innerHTML = this.value;
+} 
